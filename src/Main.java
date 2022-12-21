@@ -1,27 +1,12 @@
-import Diary.ConstantInfo;
 import Diary.Service;
-import Diary.Task;
-
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import java.util.Scanner;
-
-import static Diary.ConstantInfo.SINGLE;
-import static Diary.ConstantInfo.WEEKLY;
-import static Diary.Service.fillInTask;
-
 
 public class Main {
 
-
+    public static Service service;
 
     public static void main(String[] args) {
-        System.out.println("Hi");
-        Service service = new Service();
-
-        //Scanner
-
+        service = new Service();
         try (Scanner scanner = new Scanner(System.in)) {
             label:
             while (true) {
@@ -31,7 +16,7 @@ public class Main {
                     int menu = scanner.nextInt();
                     switch (menu) {
                         case 1:
-                            fillInTask(scanner);
+                            service.fillInTask(scanner);
                             break;
                         case 2:
                             // todo: обрабатываем пункт меню 2
